@@ -186,6 +186,7 @@ body {
             top: 0;
             left: 0;
             right: 0;
+            width: 100%;
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -410,15 +411,17 @@ body {
             box-shadow: var(--gsm);
             transform: translateY(-2px);
         }
-        /* Hero Embed (QR Code) */
+        /* Hero Embed (Creative Logo) */
         .h-emb {
             position: absolute;
             right: 6%;
             top: 50%;
-            width: min(370px, 37vw);
+            width: min(320px, 32vw);
+            height: min(320px, 32vw);
             z-index: 3;
             opacity: 0;
             animation: embIn .9s 1.2s ease forwards;
+            cursor: pointer;
         }
 
         @keyframes embIn {
@@ -430,6 +433,16 @@ body {
                 opacity: 1;
                 transform: translateY(-50%) scale(1);
             }
+        }
+
+        .h-emb:hover svg {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 30px rgba(255, 10, 10, .8));
+        }
+
+        .h-emb svg {
+            transition: all .4s ease;
+            filter: drop-shadow(0 0 20px rgba(255, 10, 10, .5));
         }
 
         .h-emb svg {
@@ -506,7 +519,7 @@ body {
 .sk-item{display:flex;align-items:center;gap:1.5rem;}
 .sk-name{font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;color:var(--wht);min-width:200px;letter-spacing:.05em;}
 .sk-bar-wrap{flex:1;height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;position:relative;}
-.sk-bar{height:100%;width:0%;background:linear-gradient(90deg,#FF9999,#FFB3B3);box-shadow:0 0 6px rgba(255,153,153,.3);border-radius:4px;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+.sk-bar{height:100%;width:0%;background:#FF4D4D;box-shadow:0 0 8px rgba(255,10,10,.5);border-radius:4px;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
 .sk-pct{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--red);min-width:45px;text-align:right;}
 .sk-card{background:rgba(5,5,5,.55);border:none;border-top:1px solid rgba(255,10,10,.45);border-bottom:1px solid rgba(255,10,10,.45);padding:1.8rem;position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s;cursor:default;display:none;}
 .sk-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--red);box-shadow:0 0 12px var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
@@ -515,7 +528,7 @@ body {
 .sk-ico{font-size:1.8rem;margin-bottom:.9rem;}
 .sk-nm{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:700;color:var(--wht);letter-spacing:.08em;margin-bottom:.85rem;}
 .sk-trk{height:2px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden;margin-bottom:.4rem;}
-.sk-bar{height:100%;width:0%;background:var(--red);box-shadow:0 0 10px var(--red);border-radius:1px;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+.sk-bar{height:100%;width:0%;background:#FF4D4D;box-shadow:0 0 10px rgba(255,77,77,.5);border-radius:1px;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
 .sk-pct{font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--red);}
 .sk-tags{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.85rem;}
 .sk-tag{font-family:'JetBrains Mono',monospace;font-size:.6rem;padding:.2rem .55rem;border:1px solid rgba(255,10,10,.2);color:var(--gr);letter-spacing:.06em;clip-path:polygon(4px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%);transition:border-color .2s,color .2s;}
@@ -540,6 +553,13 @@ body {
 .pj-tech span{font-family:'JetBrains Mono',monospace;font-size:.6rem;padding:.18rem .5rem;background:rgba(255,10,10,.07);border:1px solid rgba(255,10,10,.18);color:var(--red);}
 .pj-lnk{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--gr);text-decoration:none;letter-spacing:.1em;transition:color .2s,text-shadow .2s;display:inline-block;cursor:pointer;}
 .pj-lnk:hover{color:var(--red);text-shadow:var(--gsm);}
+.pj-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;background:rgba(255,10,10,.08);border:1.5px solid rgba(255,10,10,.4);color:var(--wht);font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-decoration:none;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all .3s ease;box-shadow:0 0 10px rgba(255,10,10,.1);}
+.pj-btn:hover{background:rgba(255,10,10,.15);border-color:var(--red);box-shadow:0 0 20px rgba(255,10,10,.3);transform:translateY(-2px);color:var(--red);}
+.pj-btn svg{width:14px;height:14px;fill:currentColor;}
+.pj-btn.upcoming{opacity:.6;cursor:not-allowed;}
+.pj-btn.upcoming:hover{transform:none;}
+.pj-btn.upcoming svg{animation:webPulse 2s ease-in-out infinite;}
+@keyframes webPulse{0%,100%{transform:scale(1) rotate(0deg);opacity:1;}50%{transform:scale(1.15) rotate(5deg);opacity:.7;}}
 #experience{background:transparent;}
 .tl{position:relative;padding-left:2.8rem;}
 .tl::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--red),rgba(255,10,10,.08));box-shadow:0 0 8px var(--rg);}
@@ -1003,9 +1023,9 @@ footer em{color:var(--red);font-style:normal;}
     <div class="s-pre">// 03 — PROJECTS</div>
     <div class="s-tit">FEATURED <span>WORK</span></div>
     <div class="pj-grid">
-      <div class="pj-card rv"><div class="pj-thumb p1">🐾</div><div class="pj-body"><div class="pj-num">PROJECT // 001</div><div class="pj-tit">AI-BASED PET FIRST AID CHATBOT</div><div class="pj-desc">Developing a mobile chatbot that provides first-aid guidance for pets based on user-input symptoms. Built with safety considerations, advising users to consult a veterinarian when necessary.</div><div class="pj-tech"><span>React Native</span><span>Node.js</span><span>Express.js</span><span>CSV Datasets</span></div><a href="https://github.com/Jenat-Milan04/Ai-chatbot" target="_blank" class="pj-lnk">VIEW ON GITHUB →</a></div></div>
-      <div class="pj-card rv"><div class="pj-thumb p2">🔍</div><div class="pj-body"><div class="pj-num">PROJECT // 002</div><div class="pj-tit">AI-POWERED WEBSITE AUDIT TOOL</div><div class="pj-desc">Built an AI-powered website audit tool that analyzes SEO and UX using structured metrics and generates actionable insights. Deployed using Vercel and Render.</div><div class="pj-tech"><span>React</span><span>Node.js</span><span>Vercel</span><span>Render</span></div><a href="https://ai-powered-website-audit-tool-psi.vercel.app/" target="_blank" class="pj-lnk">VIEW LIVE SITE →</a></div></div>
-      <div class="pj-card rv"><div class="pj-thumb p3">📚</div><div class="pj-body"><div class="pj-num">PROJECT // 003</div><div class="pj-tit">GURU AI - AI LEARNING PLATFORM</div><div class="pj-desc">Developing an AI-powered learning application designed to help Sri Lankan students excel in their education. Features interactive AI tutoring, personalized study paths, and comprehensive coverage of Grade 6 – A/L syllabus to enhance learning outcomes.</div><div class="pj-tech"><span>AI</span><span>Machine Learning</span><span>Mobile App</span><span>Education Tech</span></div><a href="#" class="pj-lnk upcoming-project">UPCOMING →</a></div></div>
+      <div class="pj-card rv"><div class="pj-thumb p1">🐾</div><div class="pj-body"><div class="pj-num">PROJECT // 001</div><div class="pj-tit">AI-BASED PET FIRST AID CHATBOT</div><div class="pj-desc">Developing a mobile chatbot that provides first-aid guidance for pets based on user-input symptoms. Built with safety considerations, advising users to consult a veterinarian when necessary.</div><div class="pj-tech"><span>React Native</span><span>Node.js</span><span>Express.js</span><span>CSV Datasets</span></div><a href="https://github.com/Jenat-Milan04/Ai-chatbot" target="_blank" class="pj-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>VIEW ON GITHUB</a></div></div>
+      <div class="pj-card rv"><div class="pj-thumb p2">🔍</div><div class="pj-body"><div class="pj-num">PROJECT // 002</div><div class="pj-tit">AI-POWERED WEBSITE AUDIT TOOL</div><div class="pj-desc">Built an AI-powered website audit tool that analyzes SEO and UX using structured metrics and generates actionable insights. Deployed using Vercel and Render.</div><div class="pj-tech"><span>React</span><span>Node.js</span><span>Vercel</span><span>Render</span></div><div style="display:flex;gap:.7rem;flex-wrap:wrap;"><a href="https://github.com/Jenat-Milan04/-AI-powered-website-audit-tool" target="_blank" class="pj-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>VIEW ON GITHUB</a><a href="https://ai-powered-website-audit-tool-psi.vercel.app/" target="_blank" class="pj-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>VIEW LIVE SITE</a></div></div></div>
+      <div class="pj-card rv"><div class="pj-thumb p3">📚</div><div class="pj-body"><div class="pj-num">PROJECT // 003</div><div class="pj-tit">GURU AI - AI LEARNING PLATFORM</div><div class="pj-desc">Developing an AI-powered learning application designed to help Sri Lankan students excel in their education. Features interactive AI tutoring, personalized study paths, and comprehensive coverage of Grade 6 – A/L syllabus to enhance learning outcomes.</div><div class="pj-tech"><span>AI</span><span>Machine Learning</span><span>Mobile App</span><span>Education Tech</span></div><a href="#" class="pj-btn upcoming upcoming-project"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="10" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="12" y1="14" x2="12" y2="22" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="2" y1="12" x2="10" y2="12" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="14" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="4.93" y1="4.93" x2="10.05" y2="10.05" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="13.95" y1="13.95" x2="19.07" y2="19.07" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="4.93" y1="19.07" x2="10.05" y2="13.95" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="13.95" y1="10.05" x2="19.07" y2="4.93" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1" fill="none" opacity=".4"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width=".8" fill="none" opacity=".25"/></svg>UPCOMING</a></div></div>
     </div>
   </div>
 </section>
