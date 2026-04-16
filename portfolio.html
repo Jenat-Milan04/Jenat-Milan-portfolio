@@ -61,23 +61,25 @@ body {
 .sp-name {
   font-family:'Inter',sans-serif;
   font-size:clamp(2.5rem,8vw,7.5rem);
-  font-weight:900; letter-spacing:.07em;
+  font-weight:900; letter-spacing:.15em;
   position:relative; z-index:2; color:var(--wht);
-  opacity:0; animation:uin .6s .3s cubic-bezier(.2,0,0,1) forwards;
+  opacity:0; animation:uin .6s 2.5s cubic-bezier(.2,0,0,1) forwards;
+  text-shadow:0 0 20px rgba(10,110,255,.8),0 0 40px rgba(10,110,255,.5);
 }
-.sp-name em { color:var(--blue); font-style:normal; text-shadow:var(--glow); }
+.sp-name em { color:var(--blue); font-style:normal; text-shadow:0 0 30px var(--blue),0 0 60px var(--bg); }
 .sp-sub {
   font-family:'JetBrains Mono',monospace;
   font-size:clamp(.6rem,1.3vw,.85rem);
-  letter-spacing:.38em; color:var(--gr);
+  letter-spacing:.38em; color:var(--blue);
   margin-top:.9rem; position:relative; z-index:2;
-  opacity:0; animation:uin .5s .9s ease forwards;
+  opacity:0; animation:uin .5s 2.8s ease forwards;
+  text-shadow:0 0 10px rgba(10,110,255,.6);
 }
 .sp-bar { width:260px; height:1px; background:#0a1828; margin-top:2.4rem; position:relative; z-index:2; overflow:hidden; }
 .sp-fill {
   height:100%; width:0%; background:var(--blue);
   box-shadow:0 0 12px var(--blue),0 0 28px var(--bg);
-  animation:ldf 2.5s .6s ease forwards;
+  animation:ldf 4s .8s ease forwards;
 }
 .sp-pct {
   font-family:'JetBrains Mono',monospace; font-size:.68rem;
@@ -124,14 +126,14 @@ nav {
 /* Hero Section */
 #hero { min-height:100vh; display:flex; align-items:center; padding:8rem 3rem 4rem; position:relative; }
 .h-cnt { position:relative; z-index:5; max-width:680px; }
-.h-pre { font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--blue); letter-spacing:.3em; margin-bottom:.9rem; opacity:0; animation:up .6s .2s both; }
-.h-name { font-family:'Inter',sans-serif; font-size:clamp(3rem,8vw,7rem); font-weight:900; line-height:.95; margin-bottom:1rem; opacity:0; animation:up .6s .4s both; }
+.h-pre { font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--blue); letter-spacing:.3em; margin-bottom:.9rem; opacity:0; animation:up .3s 0s both; }
+.h-name { font-family:'Inter',sans-serif; font-size:clamp(3rem,8vw,7rem); font-weight:900; line-height:.95; margin-bottom:1rem; opacity:0; animation:up .3s .05s both; }
 .h-name .f { display:block; color:var(--wht); }
 .h-name .l { display:block; color:var(--blue); text-shadow:var(--glow); }
-.h-role { font-family:'Inter',sans-serif; font-size:clamp(.95rem,2vw,1.4rem); font-weight:700; letter-spacing:.25em; color:var(--gr); margin-bottom:1.6rem; opacity:0; animation:up .6s .6s both; }
-.h-bio { font-size:1.03rem; color:var(--gr); line-height:1.88; max-width:510px; margin-bottom:2.4rem; opacity:0; animation:up .6s .8s both; }
-.h-btns { display:flex; gap:1.1rem; flex-wrap:wrap; opacity:0; animation:up .6s 1s both; }
-.h-social { display:flex; gap:.75rem; margin-bottom:1.4rem; opacity:0; animation:up .6s .95s both; }
+.h-role { font-family:'Inter',sans-serif; font-size:clamp(.95rem,2vw,1.4rem); font-weight:700; letter-spacing:.25em; color:var(--gr); margin-bottom:1.6rem; opacity:0; animation:up .3s .1s both; }
+.h-bio { font-size:1.03rem; color:var(--gr); line-height:1.88; max-width:510px; margin-bottom:2.4rem; opacity:0; animation:up .3s .15s both; }
+.h-btns { display:flex; gap:1.1rem; flex-wrap:wrap; opacity:0; animation:up .3s .2s both; }
+.h-social { display:flex; gap:.75rem; margin-bottom:1.4rem; opacity:0; animation:up .3s .18s both; }
 .h-soc-lnk {
   display:flex; align-items:center; justify-content:center;
   width:38px; height:38px; border:1px solid var(--bb); color:var(--gr);
@@ -178,10 +180,10 @@ section { position:relative; z-index:5; margin-bottom:3rem; }
 
 /* About */
 #about{background:transparent;}
-.a-wrap{display:grid;grid-template-columns:auto 1fr;gap:4rem;align-items:center;}
+.a-wrap{display:grid;grid-template-columns:auto 1fr;gap:4rem;align-items:start;}
 .av-box{position:relative;width:210px;height:210px;flex-shrink:0;}
 .av-in{width:100%;height:100%;border:2.5px solid var(--blue);box-shadow:var(--glow),inset 0 0 28px rgba(10,110,255,.07),0 0 30px rgba(10,110,255,.6);display:flex;align-items:center;justify-content:center;clip-path:polygon(20px 0%,100% 0%,calc(100% - 20px) 100%,0% 100%);background:rgba(4,12,24,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:relative;z-index:2;overflow:hidden;}
-.av-in img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.av-in img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transform:scale(1.15);}
 .av-r1{position:absolute;inset:-12px;z-index:1;border:2px solid rgba(10,110,255,.5);clip-path:polygon(20px 0%,100% 0%,calc(100% - 20px) 100%,0% 100%);animation:rp 2.5s ease-in-out infinite;box-shadow:0 0 15px rgba(10,110,255,.4);}
 .av-r2{position:absolute;inset:-24px;z-index:0;border:2px solid rgba(10,110,255,.35);clip-path:polygon(20px 0%,100% 0%,calc(100% - 20px) 100%,0% 100%);animation:rp 2.5s .8s ease-in-out infinite;box-shadow:0 0 20px rgba(10,110,255,.3);}
 .a-txt p{color:var(--gr);line-height:1.9;margin-bottom:.9rem;font-size:1.03rem;}
@@ -382,7 +384,7 @@ footer em{color:var(--blue);font-style:normal;}
     <div class="s-pre">// 01 — ABOUT</div>
     <div class="s-tit">WHO I <span>AM</span></div>
     <div class="a-wrap">
-      <div class="av-box rv"><div class="av-r2"></div><div class="av-r1"></div><div class="av-in"><img src="IMG-20250420-WA0060.jpg" alt="Jenat Milan"></div></div>
+      <div class="av-box rv"><div class="av-r2"></div><div class="av-r1"></div><div class="av-in"><img src="IMG-20260405-WA0132.jpg" alt="Jenat Milan"></div></div>
       <div class="a-txt rv">
         <p>I'm <strong>Jenat Milan</strong> — a motivated Computer Science undergraduate at the Informatics Institute of Technology (IIT Sri Lanka), affiliated with the University of Westminster.</p>
         <p>Passionate about building innovative solutions across multiple domains including AI-driven applications, mobile development, and web platforms. Currently developing projects that solve real-world problems through technology, integrating frontend development, backend APIs, and intelligent systems.</p>
@@ -536,38 +538,186 @@ document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
 /* ── Splash canvas ── */
 const sc=document.getElementById('sc'),sx=sc.getContext('2d');
 sc.width=innerWidth;sc.height=innerHeight;
-const CX=sc.width/2,CY=sc.height/2,N=18,RINGS=[70,160,270,400,560];
-function drawSplash(){
-  sx.clearRect(0,0,sc.width,sc.height);
-  RINGS.forEach((r,i)=>{
-    sx.beginPath();sx.arc(CX,CY,r,0,Math.PI*2);
-    sx.strokeStyle=`rgba(10,110,255,${.06+i*.04})`;sx.lineWidth=1.2;sx.stroke();
+const CX=sc.width/2,CY=sc.height/2;
+
+let animTime=0;
+const startTime=Date.now();
+
+// Particle network
+const netNodes=[];
+for(let i=0;i<40;i++){
+  netNodes.push({
+    x:Math.random()*sc.width,
+    y:Math.random()*sc.height,
+    vx:(Math.random()-.5)*.3,
+    vy:(Math.random()-.5)*.3
   });
-  for(let i=0;i<N;i++){
-    const a=(i/N)*Math.PI*2;
-    sx.beginPath();sx.moveTo(CX,CY);
-    sx.lineTo(CX+Math.cos(a)*900,CY+Math.sin(a)*900);
-    sx.strokeStyle='rgba(10,110,255,.14)';sx.lineWidth=1;sx.stroke();
-  }
-  RINGS.forEach(r=>{
+}
+
+// Scanning rings
+const scanRings=[];
+let ringTimer=0;
+
+// Holographic grid
+function drawGrid(alpha){
+  sx.strokeStyle=`rgba(10,110,255,${alpha*.05})`;
+  sx.lineWidth=.5;
+  const gridSize=50;
+  for(let x=0;x<sc.width;x+=gridSize){
     sx.beginPath();
-    for(let i=0;i<=N;i++){
-      const a=(i/N)*Math.PI*2;
-      i===0?sx.moveTo(CX+Math.cos(a)*r,CY+Math.sin(a)*r):sx.lineTo(CX+Math.cos(a)*r,CY+Math.sin(a)*r);
+    sx.moveTo(x,0);
+    sx.lineTo(x,sc.height);
+    sx.stroke();
+  }
+  for(let y=0;y<sc.height;y+=gridSize){
+    sx.beginPath();
+    sx.moveTo(0,y);
+    sx.lineTo(sc.width,y);
+    sx.stroke();
+  }
+}
+
+function drawSplash(){
+  animTime=(Date.now()-startTime)/1000;
+  
+  // Black background
+  sx.fillStyle='rgba(2,8,16,1)';
+  sx.fillRect(0,0,sc.width,sc.height);
+  
+  // Phase 1: Particle network (0-1.5s)
+  if(animTime>0.3){
+    const netAlpha=Math.min((animTime-0.3)/1.2,1);
+    
+    // Draw connections
+    sx.strokeStyle=`rgba(10,110,255,${netAlpha*.15})`;
+    sx.lineWidth=.8;
+    netNodes.forEach((n,i)=>{
+      netNodes.slice(i+1).forEach(m=>{
+        const dist=Math.hypot(n.x-m.x,n.y-m.y);
+        if(dist<150){
+          sx.beginPath();
+          sx.moveTo(n.x,n.y);
+          sx.lineTo(m.x,m.y);
+          sx.stroke();
+        }
+      });
+    });
+    
+    // Draw nodes
+    netNodes.forEach(n=>{
+      sx.beginPath();
+      sx.arc(n.x,n.y,2,0,Math.PI*2);
+      sx.fillStyle=`rgba(10,110,255,${netAlpha*.6})`;
+      sx.fill();
+      n.x+=n.vx;
+      n.y+=n.vy;
+      if(n.x<0||n.x>sc.width)n.vx*=-1;
+      if(n.y<0||n.y>sc.height)n.vy*=-1;
+    });
+  }
+  
+  // Phase 2: Energy core (1s-2s)
+  if(animTime>1){
+    const coreAlpha=Math.min((animTime-1)/1,1);
+    const corePulse=Math.sin(animTime*3)*0.2+0.8;
+    
+    // Core glow
+    const gradient=sx.createRadialGradient(CX,CY,0,CX,CY,80*coreAlpha);
+    gradient.addColorStop(0,`rgba(10,110,255,${coreAlpha*.6})`);
+    gradient.addColorStop(1,'rgba(10,110,255,0)');
+    sx.fillStyle=gradient;
+    sx.beginPath();
+    sx.arc(CX,CY,80*coreAlpha,0,Math.PI*2);
+    sx.fill();
+    
+    // Core center
+    sx.beginPath();
+    sx.arc(CX,CY,15*corePulse*coreAlpha,0,Math.PI*2);
+    sx.fillStyle=`rgba(10,110,255,${coreAlpha*.8})`;
+    sx.fill();
+    sx.strokeStyle=`rgba(10,110,255,${coreAlpha})`;
+    sx.lineWidth=2;
+    sx.stroke();
+  }
+  
+  // Phase 3: Scanning rings (1.5s-3s)
+  if(animTime>1.5){
+    ringTimer++;
+    if(ringTimer>20&&scanRings.length<5){
+      scanRings.push({radius:0,alpha:1});
+      ringTimer=0;
     }
-    sx.strokeStyle='rgba(10,110,255,.11)';sx.lineWidth=.9;sx.stroke();
-  });
+    
+    scanRings.forEach((ring,i)=>{
+      ring.radius+=3;
+      ring.alpha-=.008;
+      
+      sx.beginPath();
+      sx.arc(CX,CY,ring.radius,0,Math.PI*2);
+      sx.strokeStyle=`rgba(10,110,255,${ring.alpha*.6})`;
+      sx.lineWidth=2;
+      sx.stroke();
+      
+      // Rotating scan line
+      const angle=(animTime*2+i)%(Math.PI*2);
+      sx.beginPath();
+      sx.moveTo(CX,CY);
+      sx.lineTo(CX+Math.cos(angle)*ring.radius,CY+Math.sin(angle)*ring.radius);
+      sx.strokeStyle=`rgba(10,110,255,${ring.alpha*.4})`;
+      sx.lineWidth=1.5;
+      sx.stroke();
+      
+      if(ring.alpha<=0)scanRings.splice(i,1);
+    });
+  }
+  
+  // Phase 4: Holographic grid (2s+)
+  if(animTime>2){
+    const gridAlpha=Math.min((animTime-2)/.8,1);
+    drawGrid(gridAlpha);
+  }
+  
+  // Corner HUD brackets
+  if(animTime>2.5){
+    const hudAlpha=Math.min((animTime-2.5)/.5,1);
+    sx.strokeStyle=`rgba(10,110,255,${hudAlpha*.7})`;
+    sx.lineWidth=2.5;
+    const corners=[
+      [40,40,1,1],
+      [sc.width-40,40,-1,1],
+      [40,sc.height-40,1,-1],
+      [sc.width-40,sc.height-40,-1,-1]
+    ];
+    corners.forEach(([x,y,dx,dy])=>{
+      sx.beginPath();
+      sx.moveTo(x,y+dy*60);
+      sx.lineTo(x,y);
+      sx.lineTo(x+dx*60,y);
+      sx.stroke();
+      
+      // Inner detail
+      sx.beginPath();
+      sx.arc(x+dx*15,y+dy*15,8,0,Math.PI*2);
+      sx.strokeStyle=`rgba(10,110,255,${hudAlpha*.5})`;
+      sx.lineWidth=1;
+      sx.stroke();
+      sx.strokeStyle=`rgba(10,110,255,${hudAlpha*.7})`;
+      sx.lineWidth=2.5;
+    });
+  }
+  
+  requestAnimationFrame(drawSplash);
 }
 drawSplash();
 
 /* ── Splash counter ── */
 const pEl=document.getElementById('pct');let p=0;
-const pi=setInterval(()=>{p=Math.min(100,p+Math.floor(Math.random()*4)+1);pEl.textContent=p+'%';if(p>=100)clearInterval(pi);},38);
+const pi=setInterval(()=>{p=Math.min(100,p+Math.floor(Math.random()*2)+1);pEl.textContent=p+'%';if(p>=100)clearInterval(pi);},60);
 setTimeout(()=>{
   const sp=document.getElementById('splash'),st=document.getElementById('site');
   sp.style.transition='opacity .9s ease';sp.style.opacity='0';
   setTimeout(()=>{sp.style.display='none';st.classList.add('on');},900);
-},3300);
+},5000);
 
 /* ── Background animation ── */
 const bgc=document.getElementById('bgc'),ctx=bgc.getContext('2d');
