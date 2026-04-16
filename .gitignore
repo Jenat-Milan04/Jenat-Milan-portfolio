@@ -27,10 +27,8 @@ yarn-error.log*
 *.cert
 *.p12
 
-# Personal Images
-IMG-*.jpg
-IMG-*.png
-IMG-*.jpeg
+# Personal Images (uncomment to hide specific images)
+# IMG-20260405-WA0132.jpg
 
 # Build outputs
 dist/
