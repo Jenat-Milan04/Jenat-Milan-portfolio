@@ -122,6 +122,11 @@ nav {
 .nav-links a:hover { color:var(--blue); text-shadow:var(--gsm); }
 .nav-badge { display:flex; align-items:center; gap:.5rem; font-family:'JetBrains Mono',monospace; font-size:.65rem; color:var(--blue); letter-spacing:.12em; }
 .nav-dot { width:7px; height:7px; border-radius:50%; background:var(--blue); box-shadow:var(--gsm); animation:blink 1.6s infinite; }
+.nav-toggle { display:none; flex-direction:column; gap:5px; cursor:pointer; z-index:1001; }
+.nav-toggle span { width:25px; height:2px; background:var(--blue); transition:all .3s; }
+.nav-toggle.active span:nth-child(1) { transform:rotate(45deg) translate(7px,7px); }
+.nav-toggle.active span:nth-child(2) { opacity:0; }
+.nav-toggle.active span:nth-child(3) { transform:rotate(-45deg) translate(7px,-7px); }
 
 /* Hero Section */
 #hero { min-height:100vh; display:flex; align-items:center; padding:8rem 3rem 4rem; position:relative; }
@@ -276,9 +281,30 @@ footer em{color:var(--blue);font-style:normal;}
 .glitch::after{color:#003377;clip-path:polygon(0 55%,100% 55%,100% 100%,0 100%);animation:g2 6s infinite;}
 
 @media(max-width:768px){
-  nav{padding:1rem 1.5rem} .nav-links{display:none} .inn{padding:4rem 1.5rem}
-  .a-wrap,.c-wrap{grid-template-columns:1fr;gap:2.5rem} .h-emb{display:none}
-  #hero{padding:7rem 1.5rem 3rem} .dv{margin:0 1.5rem} footer{padding:1.5rem}
+  nav{padding:1rem 1.5rem;}
+  .nav-toggle{display:flex;}
+  .nav-links{position:fixed;top:0;right:-100%;width:70%;max-width:300px;height:100vh;flex-direction:column;background:rgba(2,8,16,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:5rem 2rem 2rem;gap:1.5rem;border-left:1px solid rgba(10,110,255,.3);box-shadow:-5px 0 30px rgba(0,0,0,.5);transition:right .4s ease;}
+  .nav-links.active{right:0;}
+  .nav-links a{font-size:.85rem;padding:.5rem 0;border-bottom:1px solid rgba(10,110,255,.1);}
+  .nav-badge{font-size:.6rem;}
+  .inn{padding:4rem 1.5rem;}
+  .a-wrap{grid-template-columns:1fr;gap:2rem;text-align:center;}
+  .av-box{margin:0 auto;}
+  .a-stats{grid-template-columns:repeat(2,1fr);gap:.8rem;}
+  .c-wrap{grid-template-columns:1fr;gap:2.5rem;}
+  .h-emb{display:none;}
+  #hero{padding:7rem 1.5rem 3rem;}
+  .h-name{font-size:clamp(2.5rem,12vw,4rem);}
+  .h-role{font-size:clamp(.85rem,3vw,1.1rem);letter-spacing:.15em;}
+  .h-bio{font-size:.95rem;}
+  .h-btns{flex-direction:column;width:100%;}
+  .btn-r,.btn-o{width:100%;text-align:center;padding:.9rem 2rem;}
+  .dv{margin:2rem 1.5rem;}
+  footer{padding:1.5rem;font-size:.6rem;}
+  .pj-grid{grid-template-columns:1fr;}
+  .sk-name{min-width:120px;font-size:.9rem;}
+  .tl{padding-left:2rem;}
+  .c-lnk{font-size:.7rem;padding:.75rem 1.2rem;}
 }
 </style>
 </head>
@@ -296,10 +322,15 @@ footer em{color:var(--blue);font-style:normal;}
 <div id="site">
 <nav>
   <div class="nav-logo">JENAT MILAN</div>
-  <ul class="nav-links">
-    <li><a href="#about">ABOUT</a></li><li><a href="#skills">SKILLS</a></li>
-    <li><a href="#projects">PROJECTS</a></li><li><a href="#experience">JOURNEY</a></li>
-    <li><a href="#contact">CONTACT</a></li>
+  <div class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeNav()">ABOUT</a></li><li><a href="#skills" onclick="closeNav()">SKILLS</a></li>
+    <li><a href="#projects" onclick="closeNav()">PROJECTS</a></li><li><a href="#experience" onclick="closeNav()">JOURNEY</a></li>
+    <li><a href="#contact" onclick="closeNav()">CONTACT</a></li>
   </ul>
   <div class="nav-badge"><div class="nav-dot"></div>OPEN TO WORK</div>
 </nav>
@@ -324,26 +355,8 @@ footer em{color:var(--blue);font-style:normal;}
   </div>
 
   <div class="h-emb">
-    <div style="text-align:center;">
-      <h3 style="color:#0A6EFF;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem;text-shadow:0 0 10px rgba(10,110,255,.6);"> SCAN MY DIGITAL PROFILE</h3>
-      <p style="color:#b0c8e8;font-size:0.75rem;font-family:'JetBrains Mono',monospace;margin-bottom:1.5rem;">
-        Coming soon — All my social links &amp; projects
-      </p>
-      <a href="links.html" target="_blank" style="display:block;text-decoration:none;">
-        <div style="width:180px;height:180px;margin:auto;
-        border:2px dashed #0A6EFF;display:flex;
-        align-items:center;justify-content:center;
-        color:#0A6EFF;font-family:'JetBrains Mono',monospace;font-size:0.8rem;letter-spacing:0.1em;
-        box-shadow:0 0 20px rgba(10,110,255,.3);transition:all 0.3s ease;cursor:pointer;"
-        onmouseover="this.style.boxShadow='0 0 30px rgba(10,110,255,.6)';this.style.borderColor='#4499FF';"
-        onmouseout="this.style.boxShadow='0 0 20px rgba(10,110,255,.3)';this.style.borderColor='#0A6EFF';">
-          QR CODE HERE
-        </div>
-      </a>
-      <p style="color:#4499FF;font-size:0.65rem;font-family:'JetBrains Mono',monospace;margin-top:0.8rem;letter-spacing:0.08em;">CLICK TO VIEW</p>
-    </div>
-    <a href="links.html" target="_blank" style="display:none;width:100%;height:100%;">
-    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <a href="links.html" target="_blank" style="display:block;width:100%;height:100%;">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <radialGradient id="rg" cx="50%" cy="50%" r="55%">
           <stop offset="0%" stop-color="#0A6EFF" stop-opacity="0.14"/>
@@ -863,6 +876,27 @@ document.querySelectorAll('.upcoming-project').forEach(link=>{
     e.preventDefault();
     alert('🔵 This project is launching soon! Stay tuned for updates.');
   });
+});
+
+/* ── Mobile Navigation ── */
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.getElementById('navLinks');
+
+navToggle.addEventListener('click',()=>{
+  navToggle.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+function closeNav(){
+  navToggle.classList.remove('active');
+  navLinks.classList.remove('active');
+}
+
+// Close menu when clicking outside
+document.addEventListener('click',(e)=>{
+  if(!navToggle.contains(e.target)&&!navLinks.contains(e.target)){
+    closeNav();
+  }
 });
 </script>
 </body>
