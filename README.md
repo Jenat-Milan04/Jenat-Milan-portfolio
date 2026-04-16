@@ -27,13 +27,44 @@ A modern, cyberpunk-themed portfolio website showcasing my work as a Computer Sc
 
 ## 🎨 Design Theme
 
-Red and black cyberpunk aesthetic with:
-- Orbitron & Rajdhani fonts
+Blue and black cyberpunk aesthetic with:
+- Inter & JetBrains Mono fonts
 - Glowing effects and custom cursor
 - Geometric patterns and animations
 - Responsive layout
 
+## 🚀 Getting Started
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Jenat-Milan04/Jenat-Milan-portfolio.git
+```
+
+2. Open `portfolio.html` in your browser or run a local server:
+```bash
+npm start
+```
+
+## 📁 Project Structure
+
+```
+Jenat-Milan-portfolio/
+├── portfolio.html          # Main HTML file
+├── README.md              # Project documentation
+├── LICENSE                # MIT License
+├── package.json           # Project metadata
+├── .gitignore            # Git ignore rules
+├── sitemap.xml           # SEO sitemap
+├── robots.txt            # Crawler instructions
+└── .github/
+    ├── workflows/
+    │   └── deploy.yml    # Auto-deployment
+    └── FUNDING.yml       # Sponsor config
+```
+
 ## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details
 
 © 2025 Jenat Milan. All rights reserved.
 
