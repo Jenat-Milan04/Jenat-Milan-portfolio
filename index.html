@@ -720,8 +720,8 @@ function drawAIBackground(){
   nodes.forEach((n,i)=>{
     nodes.slice(i+1).forEach(m=>{
       const d=Math.hypot(n.x-m.x,n.y-m.y);
-      if(d<160){
-        const a=(160-d)/160;             /* closer = stronger */
+      if(d<145){
+        const a=(145-d)/145;             /* closer = stronger */
         ctx.beginPath();
         ctx.moveTo(n.x,n.y);
         ctx.lineTo(m.x,m.y);
