@@ -4,6 +4,7 @@ node_modules/
 # IDE
 .vscode/
 .idea/
+*.code-workspace
 
 # OS
 .DS_Store
@@ -11,7 +12,37 @@ Thumbs.db
 
 # Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Environment
 .env
 .env.local
+.env.*.local
+
+# Personal/Private Files
+*.pem
+*.key
+*.cert
+*.p12
+
+# Personal Images
+IMG-*.jpg
+IMG-*.png
+IMG-*.jpeg
+
+# Build outputs
+dist/
+build/
+.vercel/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Private notes
+NOTES.md
+TODO.md
+private/
