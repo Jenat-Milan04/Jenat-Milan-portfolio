@@ -1,0 +1,25 @@
+{
+  "name": "jenat-milan-portfolio",
+  "version": "1.0.0",
+  "description": "A modern, cyberpunk-themed portfolio website",
+  "main": "portfolio.html",
+  "scripts": {
+    "start": "npx http-server -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jenat-Milan04/Jenat-Milan-portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "cyberpunk",
+    "web-development",
+    "fullstack"
+  ],
+  "author": "Jenat Milan <jenatmilan05@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jenat-Milan04/Jenat-Milan-portfolio/issues"
+  },
+  "homepage": "https://github.com/Jenat-Milan04/Jenat-Milan-portfolio#readme"
+}
