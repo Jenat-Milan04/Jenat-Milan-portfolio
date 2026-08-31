@@ -2,7 +2,7 @@
   "name": "jenat-milan-portfolio",
   "version": "1.0.0",
   "description": "A modern, cyberpunk-themed portfolio website",
-  "main": "portfolio.html",
+  "main": "index.html",
   "scripts": {
     "start": "npx http-server -p 8080"
   },
